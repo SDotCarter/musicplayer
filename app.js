@@ -30,6 +30,27 @@ let allMusic = [{
         artist: "Talking Heads",
         img: 'music5',
         src: 'music5'
+    },
+
+    {
+        name: 'Project Pat - Life We Live',
+        artist: "Project Pat",
+        img: 'music6',
+        src: 'music6'  
+    },
+
+    {
+        name: 'Let\'s Get It',
+        artist: 'Kasinova Tha Don',
+        img: 'music7',
+        src: 'music7'
+    },
+
+    {
+        name: 'Rain On Me',
+        artist: 'Kasinova Tha Don',
+        img: 'music8',
+        src: 'music8'
     }
 
 ]
@@ -50,7 +71,7 @@ const wrapper = document.querySelector('.wrapper'),
     showMoreBtn = wrapper.querySelector('#more-music'),
     hideMusicBtn = musicList.querySelector('#close');
 
-let musicIndex = Math.floor((Math.random() * allMusic.length + 1));
+let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
 
 window.addEventListener('load', () => {
     loadMusic(musicIndex);
@@ -195,11 +216,11 @@ mainAudio.addEventListener('ended', () => {
             break;
         case 'shuffle': // if repeat-one icon is chosen, change it to shuffle
             // Generates random index numbers between 0 and the length of the array
-            let randomIndex = Math.floor((Math.random() * allMusic.length + 1));
+            let randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
             do {
-                randonIndex = Math.floor((Math.random() * allMusic.length + 1));
-            } while (musicIndex = randonIndex); // This loop will run until the next random number isn't the same of the current music index
-            musicIndex = randonmIndex; // passed randomIndex to musicIndex so that the random song will play
+                randomIndex = Math.floor((Math.random() * allMusic.length) + 1);
+            } while (musicIndex == randomIndex); // This loop will run until the next random number isn't the same of the current music index
+            musicIndex = randomIndex; // passed randomIndex to musicIndex so that the random song will play
             loadMusic(musicIndex); // calls loadMusic function
             playMusic();
             playingNow();
